@@ -1,6 +1,8 @@
-﻿<krpano version="1.20.11" title="Virtual Tour">
+<krpano version="1.20.11" title="Virtual Tour">
 
 	<include url="skin/vtourskin.xml" />
+	<include url="%SWFPATH%/add_hotspot/plugins_l/add_hotspot.xml" />
+	<!-- <include url="%SWFPATH%/add_hotspot/plugins_l/editor/add_hotspot_2.xml" /> -->
 
 	<!-- 인트로 이미지 추가 -->
 	<layer name="intro"
@@ -18,7 +20,7 @@
 		<layer name="intro_logo"
 			   enabled ="false"
 		       onclick="on_intro_click()"
-			 url="images/poster.jpg" align="center" y="20" scale="0.5"/>
+			 url="images/poster.png" align="center" y="20" scale="0.2"/>
 
 	</layer>
 
@@ -29,7 +31,7 @@
 
 	</action>
 
-	<layer name="logo" url="images/logo.png" align="righttop" x="10" y="10" scale="0.5" keep="true" />
+	<layer name="logo" url="images/logo.png" align="righttop" x="10" y="10" scale="0.25" keep="true" />
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="false"
@@ -102,7 +104,13 @@
 
 
 
-	<scene name="scene_1" title="1" onstart="" thumburl="panos/1.tiles/thumb.jpg" lat="" lng="" heading="">
+		<!-- *** add hotspt *** -->
+
+	<include url="%FIRSTXML%/add_hotspot/plugins_l/plugin_a/photo.xml"/>
+	<include url="%FIRSTXML%/add_hotspot/plugins_l/plugin_a/poligon.xml"/>
+	<include url="%FIRSTXML%/add_hotspot/plugins_l/plugin_a/video.xml"/>
+
+<scene name="scene_1" title="1" onstart="" thumburl="panos/1.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -147,6 +155,14 @@
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="-3.050" atv="71.118" linkedscene="scene_1_3" />
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-179.336" atv="65.893" linkedscene="scene_1_1" />
 
+	
+		<hotspot name="hsp_2_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/2_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.1" alpha="0" ath="178.0230" atv="34.0934" install_onclick="6" phot_h="80" info_ah="2_1.png" />
+		<hotspot name="hsp_2_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_2_1],onclick);" alpha="0" alpha2="0" title="판넬보기" onhover_temp="showtit();" >
+			<point ath="128.0655" atv="12.5705" /> 
+			<point ath="119.1899" atv="25.5499" /> 
+			<point ath="-115.8187" atv="25.8069" /> 
+			<point ath="-124.5040" atv="14.1122" /> 
+		</hotspot>
 	</scene>
 
 	<scene name="scene_1_3" title="1_3" onstart="" thumburl="panos/1_3.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -197,6 +213,18 @@
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="50.470" atv="17.886" linkedscene="scene_1_6" />
 		<hotspot name="spot3" style="skin_hotspotstyle" ath="-55.943" atv="15.660" linkedscene="scene_1_18" />
 
+	
+		<hotspot name="hsp_5_1" style="link_hs_sm" onclick="looktohotspot(get(name), 90); videoplayer_open(video1.mp4, get(poster_Ah));" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.3" alpha="0" ath="-0.1378" atv="-25.9480" install_onclick="7" video_h="80" volume_adhs="0.5" info_ah="video1.mp4" />
+		<hotspot name="hsp_5_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_5_1],onclick);" alpha="0" handcursor="false" alpha2="0" fillcolor="0x000000" fillalpha="0" borderwidth="0" bordercolor="0x000000" borderalpha="0" title="비디오보기" >
+			<point ath="15.7552" atv="-28.2561" /> 
+			<point ath="-0.7980" atv="-36.9401" /> 
+			<point ath="-16.6612" atv="-28.1798" /> 
+			<point ath="-16.1143" atv="-13.7358" /> 
+			<point ath="13.8870" atv="-14.0242" /> 
+			<point ath="14.4045" atv="-9.2498" /> 
+			<point ath="15.0965" atv="-9.1145" /> 
+			<point ath="15.5145" atv="-8.9906" /> 
+		</hotspot>
 	</scene>
 
 	<scene name="scene_1_6" title="1_6" onstart="" thumburl="panos/1_6.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -232,6 +260,22 @@
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="-165.660" atv="38.224" linkedscene="scene_1_6" />
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-76.874" atv="42.264" linkedscene="scene_1_8" />
 
+	
+		<hotspot name="hsp_7_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/7_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.200" alpha="0.00" ath="23.8956" atv="2.5861" install_onclick="6" phot_h="100" info_ah="7_1.png" />
+		<hotspot name="hsp_7_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_7_1],onclick);" alpha="0" alpha2="0" fillcolor="0xE60508" fillalpha="0.6884193064360193" bordercolor="0xFFEC00" title="판넬보기2" >
+			<point ath="-0.3490" atv="-35.4366" /> 
+			<point ath="0.7513" atv="39.6873" /> 
+			<point ath="46.5654" atv="36.4559" /> 
+			<point ath="45.4340" atv="-33.1346" /> 
+		</hotspot>
+		<hotspot name="hsp_7_4" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_7_3],onclick);" alpha="0" alpha2="0" fillcolor="0xE80606" fillalpha="0.69" bordercolor="0xFFEE00" title="판넬보기1" >
+			<point ath="-26.0458" atv="-27.9655" /> 
+			<point ath="-25.0898" atv="21.6614" /> 
+			<point ath="-13.1101" atv="36.5814" /> 
+			<point ath="-0.2636" atv="39.1874" /> 
+			<point ath="-2.0719" atv="-34.9409" /> 
+		</hotspot>
+		<hotspot name="hsp_7_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/7_2.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" zorder="100" alpha="0" ath="-17.9404" atv="-4.9541" install_onclick="6" info_ah="7_2.png" phot_h="120" />
 	</scene>
 
 	<scene name="scene_1_8" title="1_8" onstart="" thumburl="panos/1_8.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -249,6 +293,31 @@
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-86.523" atv="37.224" linkedscene="scene_1_9" />
 		<hotspot name="spot3" style="skin_hotspotstyle" ath="-168.696" atv="12.028" linkedscene="scene_1_6" />
 
+	
+		<hotspot name="hsp_8_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/8_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="-28.7113" atv="-6.0645" install_onclick="6" phot_h="120" info_ah="8_1.png" />
+		<hotspot name="hsp_8_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_8_1],onclick);" alpha="0" alpha2="0" fillcolor="0xE80606" fillalpha="0.69" bordercolor="0xFFEE00" title="판넬보기1" >
+			<point ath="-38.0582" atv="-28.0160" /> 
+			<point ath="-15.2420" atv="-35.2199" /> 
+			<point ath="-13.0955" atv="40.2004" /> 
+			<point ath="-25.9723" atv="37.7312" /> 
+			<point ath="-37.5522" atv="22.3275" /> 
+		</hotspot>
+	
+		<hotspot name="hsp_8_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/8_2.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" alpha="0" ath="30.4032" atv="-15.3499" install_onclick="6" phot_h="100" info_ah="8_2.png" />
+		<hotspot name="hsp_8_5" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/8_3.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" alpha="0" ath="14.6701" atv="13.3933" install_onclick="6" phot_h="100" info_ah="8_3.png" />
+		<hotspot name="hsp_8_4" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_8_3],onclick);" alpha="0" alpha2="0" title="판넬보기2" >
+			<point ath="37.7739" atv="-22.3653" /> 
+			<point ath="16.2105" atv="-25.4114" /> 
+			<point ath="17.4687" atv="-4.0488" /> 
+			<point ath="39.6569" atv="-3.3411" /> 
+			<point ath="39.6569" atv="-3.3411" /> 
+		</hotspot>
+		<hotspot name="hsp_8_6" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_8_5],onclick);" alpha="0" alpha2="0" title="판넬보기3" >
+			<point ath="28.1265" atv="1.3827" /> 
+			<point ath="3.0732" atv="2.0866" /> 
+			<point ath="2.9841" atv="25.8256" /> 
+			<point ath="29.4473" atv="23.4487" /> 
+		</hotspot>
 	</scene>
 
 	<scene name="scene_1_9" title="1_9" onstart="" thumburl="panos/1_9.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -266,6 +335,30 @@
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-97.855" atv="39.493" linkedscene="scene_1_10" />
 		<hotspot name="spot3" style="skin_hotspotstyle" ath="-177.373" atv="21.615" linkedscene="scene_1_6" />
 
+	
+		<hotspot name="hsp_9_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/9_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="-43.4849" atv="-6.3144" install_onclick="6" phot_h="100" info_ah="9_1.png" />
+		<hotspot name="hsp_9_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/9_2.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="13.5652" atv="-4.7491" install_onclick="6" phot_h="100" info_ah="9_2.png" />
+		<hotspot name="hsp_9_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_9_1],onclick);" alpha="0" alpha2="0" fillalpha="0.5488007855908169" title="판넬보기1" >
+			<point ath="-28.5718" atv="-40.3060" /> 
+			<point ath="-40.9986" atv="-36.1508" /> 
+			<point ath="-43.2423" atv="-34.2371" /> 
+			<point ath="-47.6903" atv="-36.3776" /> 
+			<point ath="-50.8351" atv="-35.4908" /> 
+			<point ath="-54.9456" atv="-30.8023" /> 
+			<point ath="-55.6080" atv="-25.8121" /> 
+			<point ath="-54.3495" atv="-21.9662" /> 
+			<point ath="-51.5583" atv="-21.1553" /> 
+			<point ath="-49.3781" atv="-21.2273" /> 
+			<point ath="-51.1285" atv="-16.7268" /> 
+			<point ath="-48.8749" atv="34.1097" /> 
+			<point ath="-24.7087" atv="42.6538" /> 
+		</hotspot>
+		<hotspot name="hsp_9_4" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_9_3],onclick);" alpha="0" alpha2="0" title="판넬보기2" >
+			<point ath="-26.7315" atv="-40.8696" /> 
+			<point ath="-23.3899" atv="28.8703" /> 
+			<point ath="43.9605" atv="21.3087" /> 
+			<point ath="44.2711" atv="-35.5719" /> 
+		</hotspot>
 	</scene>
 
 	<scene name="scene_1_10" title="1_10" onstart="" thumburl="panos/1_10.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -302,6 +395,15 @@
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-89.351" atv="42.838" linkedscene="scene_1_12" />
 		
 
+	
+		<hotspot name="hsp_11_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/11_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" alpha="0" ath="13.0530" atv="-1.5114" install_onclick="6" phot_h="100" info_ah="11_1.png" />
+		<hotspot name="hsp_11_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_11_1],onclick);" alpha="0" alpha2="0" title="판넬보기" >
+			<point ath="22.3624" atv="-35.6773" /> 
+			<point ath="-25.2635" atv="-34.2551" /> 
+			<point ath="-23.6229" atv="38.7424" /> 
+			<point ath="37.2318" atv="34.6139" /> 
+			<point ath="36.6112" atv="-18.9288" /> 
+		</hotspot>
 	</scene>
 
 	<scene name="scene_1_12" title="1_12" onstart="" thumburl="panos/1_12.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -319,6 +421,29 @@
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-176.390" atv="12.599" linkedscene="scene_1_10" />
 		<hotspot name="spot3" style="skin_hotspotstyle" ath="-85.272" atv="43.124" linkedscene="scene_1_13" />
 
+	
+		<hotspot name="hsp_12_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/12_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="2.7277" atv="-26.2770" install_onclick="6" phot_h="100" info_ah="12_1.png" />
+		<hotspot name="hsp_12_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_12_1],onclick);" alpha="0" alpha2="0" title="판넬보기1" >
+			<point ath="-42.1648" atv="-25.4293" /> 
+			<point ath="-43.0986" atv="-10.8117" /> 
+			<point ath="38.7150" atv="-11.8158" /> 
+			<point ath="37.8781" atv="-25.9193" /> 
+		</hotspot>
+	
+		<hotspot name="hsp_12_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/12_2.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" alpha="0" ath="-27.5820" atv="8.5026" install_onclick="6" phot_h="100" info_ah="12_2.png" />
+		<hotspot name="hsp_12_5" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/12_3.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" alpha="0" ath="26.7394" atv="8.4063" install_onclick="6" info_ah="12_3.png" phot_h="100" />
+		<hotspot name="hsp_12_4" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_12_3],onclick);" alpha="0.06916900006270421" alpha2="0" fillcolor="0x2300ED" fillalpha="0.5944883376127781" bordercolor="0xFF3800" title="판넬보기2" >
+			<point ath="-4.2499" atv="-12.7085" /> 
+			<point ath="-45.0984" atv="-8.4663" /> 
+			<point ath="-47.7126" atv="30.1149" /> 
+			<point ath="-4.1981" atv="39.4161" /> 
+		</hotspot>
+		<hotspot name="hsp_12_6" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_12_5],onclick);" alpha="0" alpha2="0" title="판넬보기3" >
+			<point ath="42.4957" atv="-9.0450" /> 
+			<point ath="-1.9670" atv="-12.4169" /> 
+			<point ath="-2.2761" atv="39.2276" /> 
+			<point ath="44.3829" atv="29.2884" /> 
+		</hotspot>
 	</scene>
 
 	<scene name="scene_1_13" title="1_13" onstart="" thumburl="panos/1_13.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -337,6 +462,29 @@
 		<hotspot name="spot3" style="skin_hotspotstyle" ath="-169.282" atv="40.401" linkedscene="scene_1_10" />
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-85.643" atv="48.000" linkedscene="scene_1_14" />
 
+	
+		<hotspot name="hsp_13_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/13_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.1" alpha="0" ath="-26.8675" atv="-4.2209" install_onclick="6" phot_h="100" info_ah="13_1.png" />
+		<hotspot name="hsp_13_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/13_2.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.1" alpha="0" ath="23.7584" atv="-4.5061" install_onclick="6" phot_h="100" info_ah="13_2.png" />
+		<hotspot name="hsp_13_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_13_1],onclick);" alpha="0" alpha2="0" title="판넬보기1" >
+			<point ath="-21.2839" atv="-31.2399" /> 
+			<point ath="-9.6273" atv="-33.4569" /> 
+			<point ath="-9.2836" atv="36.8589" /> 
+			<point ath="-32.4383" atv="30.9698" /> 
+			<point ath="-31.9600" atv="-15.9619" /> 
+			<point ath="-30.4950" atv="-18.9058" /> 
+			<point ath="-34.1480" atv="-19.7486" /> 
+			<point ath="-35.7257" atv="-24.2955" /> 
+			<point ath="-32.9630" atv="-30.2623" /> 
+			<point ath="-26.9066" atv="-32.5657" /> 
+			<point ath="-23.7423" atv="-30.9685" /> 
+		</hotspot>
+		<hotspot name="hsp_13_4" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_13_3],onclick);" alpha="0" alpha2="0" fillcolor="0xE80606" fillalpha="0.69" bordercolor="0xFFEE00" title="판넬보기2" >
+			<point ath="-7.6678" atv="-34.0431" /> 
+			<point ath="31.6521" atv="-32.5344" /> 
+			<point ath="45.8623" atv="-21.1031" /> 
+			<point ath="46.2462" atv="19.6266" /> 
+			<point ath="-7.2513" atv="23.8913" /> 
+		</hotspot>
 	</scene>
 
 	<scene name="scene_1_13_1" title="1_13_1" onstart="" thumburl="panos/1_13_1.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -390,6 +538,25 @@
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="179.579" atv="43.914" linkedscene="scene_1_14" />
 		<hotspot name="spot3" style="skin_hotspotstyle" ath="-93.853" atv="47.777" linkedscene="scene_1_16" />
 
+	
+		<hotspot name="hsp_16_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/16_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" alpha="0" ath="-26.4430" atv="-4.5268" install_onclick="6" phot_h="100" info_ah="16_1.png" />
+		<hotspot name="hsp_16_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/16_2.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" alpha="0" ath="23.9474" atv="-0.9416" install_onclick="6" phot_h="100" info_ah="16_2.png" />
+		<hotspot name="hsp_16_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_16_1],onclick);" alpha="0" alpha2="0" title="판넬보기1" >
+			<point ath="-7.5455" atv="-34.9849" /> 
+			<point ath="-19.9457" atv="-46.4050" /> 
+			<point ath="-38.3969" atv="-36.8212" /> 
+			<point ath="-38.8410" atv="30.9178" /> 
+			<point ath="-20.4371" atv="40.8617" /> 
+			<point ath="-7.5275" atv="30.5105" /> 
+		</hotspot>
+		<hotspot name="hsp_16_4" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_16_3],onclick);" alpha="0" alpha2="0" fillcolor="0xE80606" fillalpha="0.69" bordercolor="0xFFEE00" title="판넬보기2" >
+			<point ath="37.2558" atv="29.2973" /> 
+			<point ath="28.2071" atv="41.2742" /> 
+			<point ath="6.3928" atv="33.8707" /> 
+			<point ath="5.6299" atv="-37.7077" /> 
+			<point ath="28.4439" atv="-46.1433" /> 
+			<point ath="37.0945" atv="-33.9245" /> 
+		</hotspot>
 	</scene>
 
 	<scene name="scene_1_16" title="1_16" onstart="" thumburl="panos/1_16.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -407,6 +574,29 @@
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-178.886" atv="33.893" linkedscene="scene_1_14" />
 		<hotspot name="spot3" style="skin_hotspotstyle" ath="-99.070" atv="25.976" linkedscene="scene_1_17" />
 
+	
+		<hotspot name="hsp_17_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/17_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.1" alpha="0" ath="-9.8914" atv="-43.6787" install_onclick="6" phot_h="100" info_ah="17_1.png" />
+		<hotspot name="hsp_17_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_17_1],onclick);" alpha="0" alpha2="0" title="판넬보기1" >
+			<point ath="-57.4978" atv="-37.2088" /> 
+			<point ath="-56.7192" atv="-20.1467" /> 
+			<point ath="51.9904" atv="-18.9797" /> 
+			<point ath="53.5634" atv="-35.2890" /> 
+		</hotspot>
+	
+		<hotspot name="hsp_17_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/17_2.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" alpha="0" ath="-43.9795" atv="9.7128" install_onclick="6" phot_h="100" info_ah="17_2.png" />
+		<hotspot name="hsp_17_5" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/17_3.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" alpha="0" ath="37.1276" atv="9.3234" install_onclick="6" phot_h="100" info_ah="17_3.png" />
+		<hotspot name="hsp_17_4" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_17_3],onclick);" alpha="0" alpha2="0" fillcolor="0xE80606" fillalpha="0.69" bordercolor="0xFFEE00" title="판넬보기2" >
+			<point ath="-5.9759" atv="-15.2611" /> 
+			<point ath="-6.2959" atv="43.8447" /> 
+			<point ath="-65.9105" atv="22.9100" /> 
+			<point ath="-60.2266" atv="-9.7280" /> 
+		</hotspot>
+		<hotspot name="hsp_17_6" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_17_5],onclick);" alpha="0" alpha2="0" fillcolor="0xE70506" fillalpha="0.6893871331079202" bordercolor="0xFFED00" title="판넬보기3" >
+			<point ath="-3.2509" atv="-15.4016" /> 
+			<point ath="-4.3460" atv="44.1005" /> 
+			<point ath="62.1461" atv="23.3981" /> 
+			<point ath="54.4831" atv="-7.9254" /> 
+		</hotspot>
 	</scene>
 
 	<scene name="scene_1_17" title="1_17" onstart="" thumburl="panos/1_17.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -424,6 +614,27 @@
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="94.428" atv="40.378" linkedscene="scene_1_16" />
 		<hotspot name="spot3" style="skin_hotspotstyle" ath="-102.878" atv="39.948" linkedscene="scene_1_18" />
 
+	
+		<hotspot name="hsp_18_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/18_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="-47.6715" atv="-7.6973" install_onclick="6" phot_h="100" info_ah="18_1.png" />
+		<hotspot name="hsp_18_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/18_2.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="19.0474" atv="-21.6396" install_onclick="6" phot_h="100" info_ah="18_2.png" />
+		<hotspot name="hsp_18_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_18_1],onclick);" alpha="0" alpha2="0" title="판넬보기1" >
+			<point ath="-32.4463" atv="-46.4845" /> 
+			<point ath="-34.2419" atv="49.7274" /> 
+			<point ath="-60.8254" atv="36.8156" /> 
+			<point ath="-59.2060" atv="-20.2148" /> 
+			<point ath="-58.3705" atv="-24.4261" /> 
+			<point ath="-62.7136" atv="-24.8136" /> 
+			<point ath="-64.4975" atv="-31.9821" /> 
+			<point ath="-60.1941" atv="-39.0329" /> 
+			<point ath="-52.7483" atv="-41.0828" /> 
+			<point ath="-47.1742" atv="-40.7955" /> 
+		</hotspot>
+		<hotspot name="hsp_18_4" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_18_3],onclick);" alpha="0" alpha2="0" title="판넬보기2" >
+			<point ath="47.8557" atv="-35.2736" /> 
+			<point ath="-30.1283" atv="-46.4766" /> 
+			<point ath="-31.3183" atv="35.7431" /> 
+			<point ath="48.8815" atv="25.4368" /> 
+		</hotspot>
 	</scene>
 
 	<scene name="scene_1_18" title="1_18" onstart="" thumburl="panos/1_18.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -460,6 +671,26 @@
 		
 		<hotspot name="spot3" style="skin_hotspotstyle" ath="-91.114" atv="15.742" linkedscene="scene_1_20" />
 
+	
+		<hotspot name="hsp_20_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/20_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.1" alpha="0" ath="-25.0984" atv="-3.4526" install_onclick="6" phot_h="90" info_ah="20_1.png" />
+		<hotspot name="hsp_20_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_20_1],onclick);" alpha="0" alpha2="0" title="판넬보기1" >
+			<point ath="-37.8804" atv="-29.2435" /> 
+			<point ath="-13.7783" atv="-35.3872" /> 
+			<point ath="-12.6926" atv="37.3277" /> 
+			<point ath="-25.3252" atv="35.3745" /> 
+			<point ath="-36.9700" atv="20.3514" /> 
+			<point ath="-36.8954" atv="20.3671" /> 
+		</hotspot>
+	
+		<hotspot name="hsp_20_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/20_2.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" alpha="0" ath="21.8542" atv="-7.3025" install_onclick="6" info_ah="20_2.png" phot_h="100" />
+		<hotspot name="hsp_20_4" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_20_3],onclick);" alpha="0" alpha2="0" fillalpha="0.517834324595956" title="판넬보기2" >
+			<point ath="33.6589" atv="-31.9840" /> 
+			<point ath="18.7825" atv="-40.3205" /> 
+			<point ath="6.1992" atv="-31.1814" /> 
+			<point ath="7.1949" atv="27.5489" /> 
+			<point ath="20.6353" atv="36.5394" /> 
+			<point ath="33.8261" atv="27.5427" /> 
+		</hotspot>
 	</scene>
 
 	<scene name="scene_1_20" title="1_20" onstart="" thumburl="panos/1_20.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -477,6 +708,29 @@
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-176.952" atv="40.386" linkedscene="scene_1_18" />
 		<hotspot name="spot3" style="skin_hotspotstyle" ath="-91.567" atv="34.879" linkedscene="scene_1_21" />
 
+	
+		<hotspot name="hsp_21_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/21_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="-0.8699" atv="-27.9953" install_onclick="6" phot_h="80" info_ah="21_1.png" />
+		<hotspot name="hsp_21_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_21_1],onclick);" alpha="0" alpha2="0" title="판넬보기1" >
+			<point ath="-39.8962" atv="-28.6807" /> 
+			<point ath="-39.5787" atv="-14.7220" /> 
+			<point ath="37.2421" atv="-14.4593" /> 
+			<point ath="37.9564" atv="-27.8712" /> 
+		</hotspot>
+	
+		<hotspot name="hsp_21_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/21_2.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" alpha="0" ath="-28.7570" atv="-0.1995" install_onclick="6" phot_h="100" info_ah="21_2.png" />
+		<hotspot name="hsp_21_5" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/21_3.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" alpha="0" ath="25.9044" atv="1.4458" install_onclick="6" phot_h="100" info_ah="21_3.png" />
+		<hotspot name="hsp_21_4" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_21_3],onclick);" alpha="0" alpha2="0" title="패널보기2" >
+			<point ath="-0.2631" atv="-18.1145" /> 
+			<point ath="-42.4414" atv="-14.4084" /> 
+			<point ath="-43.3999" atv="22.5244" /> 
+			<point ath="-1.1294" atv="29.4710" /> 
+		</hotspot>
+		<hotspot name="hsp_21_6" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_21_5],onclick);" alpha="0" alpha2="0" fillcolor="0xE80606" fillalpha="0.69" bordercolor="0xFFEE00" title="패널보기3" >
+			<point ath="38.4830" atv="23.4475" /> 
+			<point ath="0.3240" atv="29.7563" /> 
+			<point ath="0.8748" atv="-17.9750" /> 
+			<point ath="38.7570" atv="-13.6934" /> 
+		</hotspot>
 	</scene>
 
 	<scene name="scene_1_21" title="1_21" onstart="" thumburl="panos/1_21.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -494,6 +748,25 @@
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="171.788" atv="46.169" linkedscene="scene_1_18" />
 		<hotspot name="spot3" style="skin_hotspotstyle" ath="-101.179" atv="48.642" linkedscene="scene_1_5" />
 
+	
+		<hotspot name="hsp_22_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/22_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="-27.7438" atv="0.5803" install_onclick="6" phot_h="120" info_ah="22_1.png" />
+		<hotspot name="hsp_22_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/22_2.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.1" alpha="0" ath="20.2009" atv="-6.3539" install_onclick="6" phot_h="80" info_ah="22_2.png" />
+		<hotspot name="hsp_22_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_22_1],onclick);" alpha="0" alpha2="0" fillcolor="0xE80606" fillalpha="0.69" bordercolor="0xFFEE00" title="판넬보기1" >
+			<point ath="-16.7256" atv="-35.6804" /> 
+			<point ath="-27.6463" atv="-34.0159" /> 
+			<point ath="-34.2090" atv="-34.9583" /> 
+			<point ath="-39.1397" atv="-33.3397" /> 
+			<point ath="-42.1882" atv="-28.5247" /> 
+			<point ath="-39.2073" atv="-18.0649" /> 
+			<point ath="-37.3326" atv="28.2525" /> 
+			<point ath="-14.7964" atv="33.3281" /> 
+		</hotspot>
+		<hotspot name="hsp_22_4" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_22_3],onclick);" alpha="0" alpha2="0" title="판넬보기2" >
+			<point ath="-14.2584" atv="-36.3630" /> 
+			<point ath="-13.7458" atv="20.9414" /> 
+			<point ath="37.6786" atv="16.5965" /> 
+			<point ath="39.1289" atv="-30.0718" /> 
+		</hotspot>
 	</scene>
 
 
