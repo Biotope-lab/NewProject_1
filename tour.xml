@@ -3,7 +3,7 @@
 	<include url="skin/vtourskin.xml" />
 	<!--<include url="hdvr_view_copy/hdvr_view_copy.xml" /> -->
 	<include url="%SWFPATH%/add_hotspot/plugins_l/add_hotspot.xml" />
-	<!--<include url="%SWFPATH%/add_hotspot/plugins_l/editor/add_hotspot_2.xml" />  -->
+	<!--<include url="%SWFPATH%/add_hotspot/plugins_l/editor/add_hotspot_2.xml" />-->
 
 	<!-- 인트로 이미지 추가 -->
 	<layer name="intro"
@@ -110,6 +110,7 @@
 
 	<include url="%FIRSTXML%/add_hotspot/plugins_l/plugin_a/photo.xml"/>
 	<include url="%FIRSTXML%/add_hotspot/plugins_l/plugin_a/poligon.xml"/>
+	<include url="%FIRSTXML%/add_hotspot/plugins_l/plugin_a/video.xml"/>
 
 <scene name="scene_1" title="1" onstart="" thumburl="panos/1.tiles/thumb.jpg" lat="" lng="" heading="">
 		
@@ -299,7 +300,18 @@
 
 
 
-		<hotspot name="hsp_7_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/7_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.200" alpha="0.00" ath="23.8956" atv="2.5861" install_onclick="6" phot_h="100" info_ah="7_1.png" />
+		<hotspot name="hsp_7_1"
+				 style="link_hs_sm"
+				 onclick="open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/7_1.png);"
+				 url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png"
+				 scale="0.200"
+				 alpha="0.00"
+				 ath="23.8956"
+				 atv="2.5861"
+				 install_onclick="6"
+				 phot_h="100"
+				 info_ah="7_1.png"
+				 preload="true" />		
 		<hotspot name="hsp_7_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_7_1],onclick);" alpha="0" alpha2="0" fillcolor="0xE60508" fillalpha="0.6884193064360193" bordercolor="0xFFEC00" title="판넬보기2" >
 			<point ath="-0.3490" atv="-35.4366" /> 
 			<point ath="0.7513" atv="39.6873" /> 
@@ -314,8 +326,8 @@
 			<point ath="-2.0719" atv="-34.9409" /> 
 		</hotspot>
 		<hotspot name="hsp_7_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/7_2.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" zorder="100" alpha="0" ath="-17.9404" atv="-4.9541" install_onclick="6" info_ah="7_2.png" phot_h="120" />
-	
-		<hotspot name="hsp_7_5" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="-14.1044" atv="0.5292" install_onclick="5" />
+
+		<hotspot name="hsp_7_5" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="-14.1044" atv="0.5292" install_onclick="5" /> 
 		<hotspot name="hsp_7_6" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="23.4187" atv="0.0905" install_onclick="5" />
 	</scene>
 
@@ -516,8 +528,10 @@
 			<point ath="44.3829" atv="29.2884" /> 
 		</hotspot>
 	
-		<hotspot name="hsp_12_7" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="-5.7781" atv="9.1042" install_onclick="5" />
+		<hotspot name="hsp_12_7" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="-26.8846" atv="9.7785" install_onclick="5" />
 		<hotspot name="hsp_12_8" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="-5.2124" atv="-24.5239" install_onclick="5" />
+	
+		<hotspot name="hsp_12_9" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="25.9827" atv="9.3406" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_13" title="1_13" onstart="" thumburl="panos/1_13.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -697,7 +711,9 @@
 		</hotspot>
 	
 		<hotspot name="hsp_17_7" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="-1.2727" atv="-43.2522" install_onclick="5" />
-		<hotspot name="hsp_17_8" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="-0.5116" atv="17.5456" install_onclick="5" />
+		<hotspot name="hsp_17_8" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="-40.8906" atv="14.2625" install_onclick="5" />
+	
+		<hotspot name="hsp_17_9" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="35.9704" atv="15.0595" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_17" title="1_17" onstart="" thumburl="panos/1_17.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -856,7 +872,9 @@
 		</hotspot>
 	
 		<hotspot name="hsp_21_7" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="-3.3018" atv="-26.7945" install_onclick="5" />
-		<hotspot name="hsp_21_8" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="-3.3545" atv="4.1841" install_onclick="5" />
+		<hotspot name="hsp_21_8" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="-26.3766" atv="3.2740" install_onclick="5" />
+	
+		<hotspot name="hsp_21_9" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="25.6551" atv="3.0099" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_21" title="1_21" onstart="" thumburl="panos/1_21.tiles/thumb.jpg" lat="" lng="" heading="">
